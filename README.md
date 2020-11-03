@@ -26,14 +26,14 @@ A blogging app where user can create, read , update blogs.
  ## Folder Structure
  src
 * ├── controller
-* │   └── auth.js
-* |   └── blog.js
-* |   └── user.js
+*    └── auth.js
+*    └── blog.js
+*    └── user.js
 * ├── db
-* │  | └── models
-* │  |    ├── blog.js
-* |  |    ├── user.js
-* │  |    │  
-* │  ├──index.js    
+*   | └── models
+*   |    ├── blog.js
+*   |    ├── user.js
+*   |    │  
+*   ├──index.js    
 * ├── index.js
 * ├── utility.js
