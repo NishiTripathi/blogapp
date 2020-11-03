@@ -3,25 +3,28 @@
 A blogging app where user can create, read , update blogs.
 ---
 ## Requirements
- Node
- VisualStudio Code
- Postman 
+ * Node
+ * VisualStudio Code
+ * Postman 
  Postgresql
  ## Local SetUp
- cd blogapp
- ## npm install <name>
- express
- jsonwebtoken
- md5
- passport
- passport-jwt
- pg
- pg-hstore
- sequelize
- ## dev dependencies
- dotenv
+ * cd blogapp
+ * npm install
+ * npm start
  
- npm start
+ ## npm install <name>
+ * express
+ * jsonwebtoken
+ * md5
+ * passport
+ * passport-jwt
+ * pg
+ * pg-hstore
+ * sequelize
+ ## dev dependencies
+ * dotenv
+ 
+
 
  ## Folder Structure
  src
