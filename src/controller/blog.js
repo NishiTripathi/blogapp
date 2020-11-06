@@ -1,6 +1,6 @@
 const { sequelize } = require("../db/index");
 const passport = require("passport");
-function Init(app) {
+function Init(app) {    
     app.get("/blogs", async function (request, response) {
         const blogs = await sequelize.models.blogs.findAll({});
         response.status(200).send(blogs);
@@ -12,10 +12,11 @@ function Init(app) {
     });
     app.post("/blogs", passport.authenticate("jwt", { session: false }), async function (request, response) {
         const { body } = request;
-        const { title, description } = body;
+        const { title, description} = body;
         const createdBlog = await sequelize.models.blogs.create({
             title,
             description,
+            user_email:request.user.email,
         });
         response.status(200).send(createdBlog);
     });

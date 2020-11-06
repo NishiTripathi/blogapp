@@ -1,7 +1,7 @@
 const {DataTypes} = require("sequelize");
 module.exports = function(sequelize){
     return sequelize.define(
-        "blogs",
+        "bookmarks",
         {
             id:{
                 primaryKey:true,
@@ -9,19 +9,14 @@ module.exports = function(sequelize){
                 type : DataTypes.INTEGER,
                 
             },
-            title:{
-                defaultValue:"title",
+            blog_id:{
                 allowNull: false,
-                type:DataTypes.STRING(100),
-            },
-            description:{
-                 defaultValue:"description",
-                 allowNull:false,
-                 type:DataTypes.STRING(100),
+                type:DataTypes.INTEGER,
             },
             user_email:{
                 allowNull:false,
                 type:DataTypes.STRING(100),
+                unique:true
             },
         },
         {timestamps :false}
