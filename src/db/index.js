@@ -13,6 +13,7 @@ const sequelize = new Sequelize({
 const users = require("./models/user")(sequelize);
 const blogs = require("./models/blog")(sequelize);
 
+
 const init = async function () {
     try {
         await sequelize.sync({ alter: true });

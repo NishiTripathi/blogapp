@@ -1,5 +1,6 @@
 const { request } = require("express");
 const express = require("express");
+const cors = require("cors");
 const userController = require("./controller/user");
 const blogController = require("./controller/blog");
 const authController = require("./controller/auth");
@@ -28,6 +29,7 @@ passport.use(
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(passport.initialize());
+app.use(cors());
 
 userController.Init(app);
 blogController.Init(app);
@@ -35,6 +37,15 @@ authController.Init(app);
 
 db.init().then(console.log).catch(console.log);
 
+app.get('localhost:9000/blogs',function(request,response,next){
+  console.log('Connected with CORS');
+  response.json({message:"Connected"});
+});
+app.use(express.static(__dirname))
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*')
+  next()
+})
 app.listen(PORT, function () {
   console.log(`Your app is running on PORT - ${PORT}`);
 });

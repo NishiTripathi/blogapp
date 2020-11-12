@@ -19,6 +19,8 @@ function Init(app) {
             user_email:request.user.email,
         });
         response.status(200).send(createdBlog);
+        // blog.push(response.json())
+        // response.send(Response);
     });
     app.put("/blog/:id", passport.authenticate("jwt", { session: false }), async function (request, response) {
         const { id } = request.params;
